@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 const db = require("../models");
 
-// This file empties the Books collection and inserts the books below
+// This file empties the Users collection and inserts the users below
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://localhost/nutritiontrackerdb"
+  "mongodb://localhost/nutritiontrackerdbtest"
 );
 
 const userSeed = [
@@ -36,16 +36,3 @@ db.User
     console.error(err);
     process.exit(1);
   });
-
-  db.WeightEntry.create({"weight": 140})
-    .then(function(dbWeight) {
-      return db.User.findOneAndUpdate({_id: "5bcfebb86af5c94418549851"}, { $push: { weightEntries: dbWeight._id } }, { new: true });
-    })
-    .then(data => {
-      console.log(data.result.n + " records inserted!");
-      process.exit(0);
-    })
-    .catch(err => {
-      console.error(err);
-      process.exit(1);
-    });
