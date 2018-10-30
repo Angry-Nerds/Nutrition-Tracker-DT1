@@ -31,5 +31,6 @@
     "react-chartkick": "^0.3.0",
     "react-linechart": "^1.1.12",
     "react-moment": "^0.8.2"
-  }
+  },
+  "homepage": "http://angry-nerds.github.io/Nutrition-Tracker-DT1"
 }
